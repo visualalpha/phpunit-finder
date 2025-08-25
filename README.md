@@ -9,7 +9,7 @@ in parallel based on timings on CI tools such as CirclCI.
 
 Install with composer:
 
-`composer require --dev previousnext/phpunit-finder`
+`composer require --dev visualalpha/phpunit-finder`
 
 ## Usage
 
