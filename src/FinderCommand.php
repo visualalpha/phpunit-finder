@@ -31,6 +31,12 @@ class FinderCommand extends Command {
    * {@inheritdoc}
    */
   protected function execute(InputInterface $input, OutputInterface $output): int {
+    set_error_handler(function($errno, $errstr, $errfile, $errline) {
+      if ($errno === E_DEPRECATED || $errno === E_USER_DEPRECATED) {
+        return;
+      }
+      return false;
+    });
     $configFile = $input->getOption('config-file');
     $bootstrap = $input->getOption('bootstrap-file');
     include_once $bootstrap;
